@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Parser</title>
+    <style>
+        .resume {
+            text-align: center;
+            background-color: #333; /* Dark background color */
+            padding: 20px;
+            color: white; /* Text color for the content */
+            font-family: Arial, sans-serif; /* Change font family */
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: yellow; /* Change header text color to yellow */
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex-basis: 23%;
+            background-color: #444; /* Darker background color for columns */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            max-height: 200px; /* Set a maximum height for the content */
+            overflow-y: auto; /* Add vertical scrollbar if content exceeds max height */
+        }
+
+        .entity {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #FFD700; /* Change entity (h2) text color to yellow */
+        }
+
+        .label {
+            list-style: none;
+            text-align: center; /* Center-align the labels */
+            color: white; /* Change label text color to white */
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="header">
+            <h1>Resume</h1>
+        </div>
+
+        <div class="section">
+            {% for entity in ["NAME", "EMAIL", "PHONE", "ADDRESS"] %}
+                <div class="column">
+                    <h2>{{ entity.capitalize() }}</h2>
+                    <ul class="label">
+                        {% if entity in parsed_data %}
+                            {% for label in parsed_data[entity] %}
+                                <li>{{ label }}</li>
+                            {% endfor %}
+                        {% else %}
+                            <li>No data available</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endfor %}
+            {% for entity in ["SKILLS", "CERTIFICATIONS", "WORK EXPERIENCE", "EXTRA CURRICULAR", "PROJECTS", "GRADUATION", "ACHIEVEMENTS", "TECHNOLOGIES"] %}
+                <div class="column">
+                    <h2>{{ entity.capitalize() }}</h2>
+                    <ul class="label">
+                        {% if entity in parsed_data %}
+                            {% for label in parsed_data[entity] %}
+                                <li>{{ label }}</li>
+                            {% endfor %}
+                        {% else %}
+                            <li>No data available</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

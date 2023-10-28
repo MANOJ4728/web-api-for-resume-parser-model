@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj's Resume Parser</title>
+    <style>
+        body {
+            font-family: 'Cassandra', Arial, sans-serif; /* Change font to Cassandra */
+            margin: 0;
+            color: #fff; /* Text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Send video to the background */
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px; /* Adjust the top position as needed */
+            left: 10px; /* Adjust the left position as needed */
+            max-width: 150px; /* Set the maximum width for the logo */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for content */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center-align text */
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 36px; /* Increase font size for heading */
+            margin-top: 40px; /* Add top margin for heading */
+        }
+
+        p {
+            font-size: 14px; /* Decrease font size for paragraph */
+            color: #999; /* Adjust text color for paragraph */
+        }
+
+        a {
+            margin: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #007BFF; /* Link color */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop>
+        <source src="https://player.vimeo.com/external/476642450.sd.mp4?s=ab80d3071fd28593a0aca4fb7747bbddef3e1fef&profile_id=164&oauth2_token_id=57447761
+        " type="video/mp4"> <!-- Replace with your video source -->
+    </video>
+    <img class="logo" src="https://github.com/MANOJ4728/Manoj/blob/main/pic3.png?raw=true" alt="Your Logo"> <!-- Replace with the correct local path to your logo image -->
+    <h1>Manoj's Resume Parser</h1>
+    <div class="container">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+    <p>Developed and Maintained by Manoj (HGT Employee)</p>
+</body>
+</html>
